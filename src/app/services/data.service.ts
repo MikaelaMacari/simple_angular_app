@@ -7,6 +7,7 @@ import {DataInterface} from '../models/data.interface';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
 
   private apiUrl: string = environment.apiUrl;
