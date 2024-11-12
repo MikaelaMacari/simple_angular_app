@@ -1,1 +1,27 @@
-<button type="button" class="btn btn-primary" (click)="fetchData()" >Primary Button</button>
+<div class="d-flex justify-content-center mt-5">
+  <button type="button" class="btn btn-success" (click)="getCountries()">
+    @if (loading()){
+      <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+      <span role="status">Loading...</span>
+    } @else {
+      See Countries
+    }
+  </button>
+</div>
+
+@if(data.length){
+  <div class="d-flex justify-content-between gap-4 mt-5">
+    <div>
+      <figcaption class="blockquote-footer">
+       <cite title="Source Title" class="fs-3">Table Format</cite>
+      </figcaption>
+      <app-countries [countries]="data"></app-countries>
+    </div>
+    <div>
+      <figcaption class="blockquote-footer">
+        <cite title="Source Title" class="fs-3">Cards Format</cite>
+      </figcaption>
+      <app-countries-card-format [countries]="data"></app-countries-card-format>
+    </div>
+  </div>
+}

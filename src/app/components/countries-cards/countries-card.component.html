@@ -1,0 +1,13 @@
+<div class="row g-4">
+  @for(country of countries(); track country.id){
+  <div class="col">
+      <div class="card" style="width: 10rem;">
+        <img [src]="'https://picsum.photos/id/' + country.number + '/200/200'" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Number: {{country.number}}</h5>
+          <p class="card-text">{{country.country}}</p>
+        </div>
+      </div>
+  </div>
+  }
+</div>
